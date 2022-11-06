@@ -1,0 +1,57 @@
+---
+- hosts: localhost
+  connection: local
+  gather_facts: false
+  become: false
+  tasks:
+
+    - name: Install xcode
+      command: /bin/bash -c 'xcode-select --install'
+
+    - name: Install homebrew
+      command: /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+
+    - name: Configure brew
+      command: brew analytics off
+
+    - name: Install TUI packages
+      community.general.homebrew:
+        name:
+          - wget
+          - tmux
+          - gh
+          - neovim
+          - magic-wormhole
+          - the_silver_searcher
+          - fzf
+          - ripgrep-all
+          - bat
+          - exa
+          - git
+        state: latest
+        update_homebrew: yes
+        upgrade_all: yes
+
+    - name: Install cask (GUI) packages
+      community.general.homebrew_cask:
+        name:
+          - alfred
+          - homebrew/cask-fonts/fonts-fira-code
+          - homebrew/cask-fonts/fonts-fira-mono
+          - homebrew/cask-fonts/fonts-fira-sans
+          - alacritty
+          - spotify
+          - docker
+          - brave-browser
+          - librewolf
+          - firefox
+          - dropbox
+          - discord
+          - zoom
+          - whatsapp
+          - telegram
+          - signal
+          - vscodium
+        state: latest
+        update_homebrew: yes
+        upgrade_all: yes

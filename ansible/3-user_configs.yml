@@ -1,0 +1,31 @@
+---
+- hosts: lxc
+  gather_facts: false
+  become: false
+  tasks:
+
+  - name: Change shell to ZSH and remove password
+    become: true
+    user:
+      name: "user"
+      groups: sudo, docker
+      shell: /bin/zsh
+      password: '!'
+
+  - name: Set git user in containers
+    community.general.git_config:
+      name: user.name
+      scope: global
+      value: Leonardo Anjoletto Ferreira
+
+  - name: Set git email in containers
+    community.general.git_config:
+      name: user.email
+      scope: global
+      value: 43471239+anjoletto@users.noreply.github.com
+
+  - name: Set neovim as default editor
+    community.general.git_config:
+      name: core.editor
+      scope: global
+      value: nvim

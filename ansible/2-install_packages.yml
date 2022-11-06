@@ -1,0 +1,83 @@
+---
+- hosts: lxc
+  gather_facts: true
+  become: true
+  tasks:
+
+  - name: Debian Install
+    package:
+      name:
+        - silversearcher-ag
+        - firefox-esr
+        - fonts-firacode
+        - fonts-font-awesome
+        - gh
+        - unzip
+        - curl
+      state: latest
+    when:
+      ansible_facts['distribution'] == "Debian"
+
+  - name: Fedora Install
+    package:
+      name:
+        - gh
+        - firefox
+        - fira-code-fonts
+        - mozilla-fira-fonts-common
+        - mozilla-fira-mono-fonts
+        - mozilla-fira-sans-fonts
+        - fontawesome-fonts
+        - fontawesome5-fonts-all
+        - the_silver_searcher
+      state: latest
+    when:
+      ansible_facts['distribution'] == "Fedora"
+
+  - name: Void Install
+    package:
+      name:
+        - github-cli
+        - firefox
+        - the_silver_searcher
+        - font-firacode
+        - font-fira-otf
+        - font-fira-ttf
+        - font-awesome6
+      state: latest
+    when:
+      ansible_facts['distribution'] == "Void"
+
+  - name: Arch Install
+    package:
+      name:
+        - github-cli
+        - firefox
+        - noto-fonts
+        - the_silver_searcher
+      state: latest
+    when:
+      ansible_facts['distribution'] == "Archlinux"
+
+  - name: Install packages
+    package:
+      name:
+        - docker
+        - docker-compose
+        - tmux
+        - zsh
+        - git
+        - wget
+        - neovim
+        - bat
+        - ripgrep
+        - fzf
+        - magic-wormhole
+        - tree
+        - exa
+        - rofi
+        - kitty
+        - feh
+        - ncdu
+        - qutebrowser
+      state: latest

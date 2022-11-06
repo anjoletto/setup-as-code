@@ -1,0 +1,36 @@
+---
+- hosts: lxc
+  gather_facts: false
+  become: false
+  tasks:
+
+  - name: Clone TUI repo
+    git:
+      repo: git@github.com:anjoletto/tui-config.git
+      dest: ~/.dots
+
+  - name: Create link for ZSH configuration
+    file:
+      src: ~/.dots/zsh/zshenv
+      dest: ~/.zshenv
+      state: link
+
+  - name: Create links for configurations
+    file:
+      src: '~/.dots/{{ item  }}'
+      dest: '~/.config/{{ item }}'
+      state: link
+    loop:
+      - nvim
+      - tmux.conf
+      - bat
+
+  - name: Copy GTK configuration 
+    copy:
+      src: '~/.config/{{ item }}'
+      dest: '~/.config/{{ item }}'
+      directory_mode:
+    loop:
+      - gtk-2.0
+      - gtk-3.0
+      - gtk-4.0
