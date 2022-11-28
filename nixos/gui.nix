@@ -13,10 +13,9 @@
     enable = true;
 
     #desktopManager = { xterm.enable = false; };
-    displayManager = { defaultSession = "none+qtile"; };
+    displayManager = { defaultSession = "none+i3"; };
 
     windowManager.i3.enable = true;
-    windowManager.qtile.enable = true;
 
     layout = "us";
     xkbVariant = "altgr-intl";
