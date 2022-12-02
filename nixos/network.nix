@@ -19,10 +19,6 @@
   # use wpa supplicant
   # -------------------------------------------------------------------------- #
   #networking.wireless.enable = true;
-  #networking.wireless.networks = {
-  #      ssid="Business Center"
-  #      psk=33c85ed6bb49a0ce5ae26d99cf39ff7f3a1c19c5635823be25a71b0ffb29c81b
-  #};
   # -------------------------------------------------------------------------- #
 
 }
