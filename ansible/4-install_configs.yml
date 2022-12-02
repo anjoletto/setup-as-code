@@ -34,3 +34,13 @@
       - gtk-2.0
       - gtk-3.0
       - gtk-4.0
+
+  - name: GUI apps
+    copy:
+      src: '~/.dots/{{ item }}'
+      dest: '~/.config/{{ item }}'
+      directory_mode:
+    loop:
+      - kitty
+      - qutebrowser
+
