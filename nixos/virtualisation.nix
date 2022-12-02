@@ -3,8 +3,8 @@
   # -------------------------------------------------------------------------- #
   # docker
   # -------------------------------------------------------------------------- #
-  #virtualisation.docker.enable = true;
-  #users.extraGroups.docker.members = [ "user" ];
+  virtualisation.docker.enable = true;
+  users.extraGroups.docker.members = [ "user" ];
   # -------------------------------------------------------------------------- #
 
   # -------------------------------------------------------------------------- #
@@ -21,7 +21,7 @@
   # -------------------------------------------------------------------------- #
   # virtualbox
   # -------------------------------------------------------------------------- #
-  #virtualisation.virtualbox.host.enable = true;
-  #users.extraGroups.vboxusers.members = [ "user" ];
+  virtualisation.virtualbox.host.enable = true;
+  users.extraGroups.vboxusers.members = [ "user" ];
   # -------------------------------------------------------------------------- #
 }
