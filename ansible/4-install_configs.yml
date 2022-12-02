@@ -37,8 +37,8 @@
 
   - name: GUI apps
     copy:
-      src: '~/.dots/{{ item }}'
-      dest: '~/.config/{{ item }}'
+      src: '~/.dots/gui-config/{{ item }}'
+      dest: '~/.config/'
       directory_mode:
     loop:
       - kitty
