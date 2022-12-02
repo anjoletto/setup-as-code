@@ -11,6 +11,7 @@
         - firefox-esr
         - fonts-firacode
         - fonts-font-awesome
+        - magic-wormhole
         - gh
         - unzip
         - curl
@@ -30,6 +31,7 @@
         - fontawesome-fonts
         - fontawesome5-fonts-all
         - the_silver_searcher
+        - dnf-automatic
       state: latest
     when:
       ansible_facts['distribution'] == "Fedora"
@@ -72,7 +74,6 @@
         - bat
         - ripgrep
         - fzf
-        - magic-wormhole
         - tree
         - exa
         - rofi
