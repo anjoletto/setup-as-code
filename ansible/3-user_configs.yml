@@ -8,7 +8,7 @@
     become: true
     user:
       name: "user"
-      groups: sudo, docker
+      groups: wheel, docker
       shell: /bin/zsh
       password: '!'
 
