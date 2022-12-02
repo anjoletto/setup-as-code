@@ -4,6 +4,7 @@
   gather_facts: false
   become: false
   tasks:
+
   - name: Set git user in localhost
     community.general.git_config:
       name: user.name
@@ -42,12 +43,6 @@
       - nvim
       - tmux.conf
       - bat
-
-  - name: Install vimplug
-    command: sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
-
-  - name: Install neovim plugins
-    command: nvim --headless +PlugInstall +qa
 
   - name: Clone GUI repo
     git:
@@ -110,15 +105,4 @@
     file:
       src: ~/.dots/gui-config/wallpaper/background-image
       dest: ~/.background-image
-      state: link
-
-  - name: Clone kbd config repo
-    git:
-      repo: git@github.com:anjoletto/kbd-config.git
-      dest: ~/.dots/kbd-config
-
-  - name: Create link for kbd config
-    file:
-      src: ~/.dots/kbd-config
-      dest: ~/.config/kbd
       state: link
