@@ -51,7 +51,7 @@
       unicode-emoji
       spotify
       discord
-      authy
+      tdesktop
     ];
   };
 }
