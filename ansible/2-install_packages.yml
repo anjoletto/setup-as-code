@@ -15,6 +15,7 @@
         - gh
         - unzip
         - curl
+        - clang
       state: latest
     when:
       ansible_facts['distribution'] == "Debian"
