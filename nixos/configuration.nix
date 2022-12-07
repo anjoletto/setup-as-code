@@ -14,9 +14,9 @@
       ./tui.nix
       ./virtualisation.nix
       ./users.nix
+      ./custom.nix
     ];
 
-  networking.hostName = "sandbox";
   system.stateVersion = "22.11";
 }
 
