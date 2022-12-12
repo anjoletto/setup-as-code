@@ -10,10 +10,13 @@
   # -------------------------------------------------------------------------- #
   # lxc + lxd
   # -------------------------------------------------------------------------- #
-  virtualisation.lxc.enable = true;
+  virtualisation.lxc = {
+    enable = true;
+    lxcfs.enable = true;
+  };
   virtualisation.lxd = {
-      enable = true;
-      recommendedSysctlSettings = true;
+    enable = true;
+    recommendedSysctlSettings = true;
   };
   users.extraGroups.lxd.members = [ "user" ];
   # -------------------------------------------------------------------------- #
