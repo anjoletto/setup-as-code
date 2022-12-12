@@ -1,6 +1,6 @@
 { config, ... }:
 {
-  nix.autoOptimiseStore = true;
+  nix.settings.auto-optimise-store = true;
 
   system.autoUpgrade = {
     enable = true;
