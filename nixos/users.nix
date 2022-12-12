@@ -11,7 +11,7 @@
       wget
       playerctl
       pamixer
-      magic-wormhole-rs
+      magic-wormhole
       ansible
       gotop
       # programming
@@ -29,6 +29,9 @@
       tree-sitter
       detox
       yarn
+      devbox
+      direnv
+      cookiecutter
       # GUI applications
       lxqt.lxqt-policykit
       gtk3-x11
