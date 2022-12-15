@@ -23,6 +23,9 @@
       pipenv
       black
       lua53Packages.lua
+      rustup
+      rust-analyzer
+      go
       clang
       gcc
       nodejs
@@ -32,6 +35,7 @@
       devbox
       direnv
       cookiecutter
+      lazygit
       # GUI applications
       lxqt.lxqt-policykit
       gtk3-x11
@@ -54,7 +58,6 @@
       unicode-emoji
       spotify
       discord
-      tdesktop
     ];
   };
 }
