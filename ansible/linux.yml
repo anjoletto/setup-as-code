@@ -1,0 +1,57 @@
+---
+- hosts: localhost
+  connection: local
+  gather_facts: false
+  become: false
+  tasks:
+
+  - name: Create links for GUI configurations
+    file:
+      src: '~/.dots/gui-config/{{ item  }}'
+      dest: '~/.config/{{ item }}'
+      state: link
+    loop:
+      - sxhkd
+      - polybar
+      - dunst
+      - rofi
+      - autorandr
+
+  - name: Create links for GTK configurations
+    file:
+      src: '~/.dots/gui-config/gtk'
+      dest: '~/.config/{{ item }}'
+      state: link
+    loop:
+      - gtk-2.0
+      - gtk-3.0
+      - gtk-4.0
+
+  - name: Create link for Xresources configuration
+    file:
+      src: ~/.dots/gui-config/x11/xresources
+      dest: ~/.Xresources
+      state: link
+
+  - name: Create link for user-dirs configuration
+    file:
+      src: ~/.dots/gui-config/x11/user-dirs.dirs
+      dest: ~/.config/user-dirs.dirs
+      state: link
+
+  - name: Clone i3 repo
+    git:
+      repo: git@github.com:anjoletto/i3wm-config.git
+      dest: ~/.dots/i3wm-config
+
+  - name: Create link for i3 configuration
+    file:
+      src: ~/.dots/i3wm-config
+      dest: ~/.config/i3
+      state: link
+
+  - name: Create link for wallpaper
+    file:
+      src: ~/.dots/gui-config/wallpaper/background-image
+      dest: ~/.background-image
+      state: link
