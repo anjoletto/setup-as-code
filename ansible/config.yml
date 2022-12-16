@@ -1,0 +1,108 @@
+---
+- hosts: localhost
+  connection: local
+  gather_facts: false
+  become: false
+  tasks:
+
+  - name: Set git user in localhost
+    community.general.git_config:
+      name: user.name
+      scope: global
+      value: Leonardo Anjoletto Ferreira
+
+  - name: Set git email in localhost
+    community.general.git_config:
+      name: user.email
+      scope: global
+      value: 43471239+anjoletto@users.noreply.github.com
+
+  - name: Set neovim as default editor
+    community.general.git_config:
+      name: core.editor
+      scope: global
+      value: nvim
+
+  - name: Clone TUI repo
+    git:
+      repo: git@github.com:anjoletto/tui-config.git
+      dest: ~/.dots/tui-config
+
+  - name: Create link for ZSH configuration
+    file:
+      src: ~/.dots/tui-config/zsh/zshenv
+      dest: ~/.zshenv
+      state: link
+
+  - name: Create links for configurations
+    file:
+      src: '~/.dots/tui-config/{{ item  }}'
+      dest: '~/.config/{{ item }}'
+      state: link
+    loop:
+      - nvim
+      - tmux.conf
+      - bat
+
+  - name: Clone GUI repo
+    git:
+      repo: git@github.com:anjoletto/gui-config.git
+      dest: ~/.dots/gui-config
+
+  - name: Create link for alacritty configuration
+    file:
+      src: ~/.dots/gui-config/alacritty/alacritty.yml
+      dest: ~/.config/alacritty.yml
+      state: link
+
+  - name: Create links for configurations
+    file:
+      src: '~/.dots/gui-config/{{ item  }}'
+      dest: '~/.config/{{ item }}'
+      state: link
+    loop:
+      - sxhkd
+      - polybar
+      - dunst
+      - rofi
+      - autorandr
+      - qutebrowser
+
+  - name: Create links for GTK configurations
+    file:
+      src: '~/.dots/gui-config/gtk'
+      dest: '~/.config/{{ item }}'
+      state: link
+    loop:
+      - gtk-2.0
+      - gtk-3.0
+      - gtk-4.0
+
+  - name: Create link for Xresources configuration
+    file:
+      src: ~/.dots/gui-config/x11/xresources
+      dest: ~/.Xresources
+      state: link
+
+  - name: Create link for user-dirs configuration
+    file:
+      src: ~/.dots/gui-config/x11/user-dirs.dirs
+      dest: ~/.config/user-dirs.dirs
+      state: link
+
+  - name: Clone i3 repo
+    git:
+      repo: git@github.com:anjoletto/i3wm-config.git
+      dest: ~/.dots/i3wm-config
+
+  - name: Create link for i3 configuration
+    file:
+      src: ~/.dots/i3wm-config
+      dest: ~/.config/i3
+      state: link
+
+  - name: Create link for wallpaper
+    file:
+      src: ~/.dots/gui-config/wallpaper/background-image
+      dest: ~/.background-image
+      state: link
