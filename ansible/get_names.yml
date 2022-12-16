@@ -1,6 +1,0 @@
----
-- hosts: all
-  become: false
-  tasks:
-    - name: Distro
-      debug: msg="{{ ansible_distribution }} {{ ansible_distribution_version }}"

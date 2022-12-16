@@ -18,5 +18,4 @@
         wait_for_ipv4_addresses: true
         timeout: 600
       loop:
-        - { name: fc36-dev, image: fedora/36/amd64 }
         - { name: lab, image: debian/12 }

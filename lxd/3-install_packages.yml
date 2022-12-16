@@ -33,6 +33,7 @@
         - fontawesome5-fonts-all
         - the_silver_searcher
         - dnf-automatic
+        - tree-sitter-cli
       state: latest
     when:
       ansible_facts['distribution'] == "Fedora"
