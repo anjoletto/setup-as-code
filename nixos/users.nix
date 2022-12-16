@@ -23,9 +23,6 @@
       pipenv
       black
       lua53Packages.lua
-      rustup
-      rust-analyzer
-      go
       clang
       gcc
       nodejs
@@ -39,7 +36,6 @@
       # GUI applications
       lxqt.lxqt-policykit
       gtk3-x11
-      xidlehook
       polybar
       sxhkd
       i3lock
