@@ -54,6 +54,7 @@
       unicode-emoji
       spotify
       discord
+      zathura
     ];
   };
 }
