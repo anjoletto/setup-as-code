@@ -55,6 +55,7 @@
       spotify
       discord
       zathura
+      pinta
     ];
   };
 }
