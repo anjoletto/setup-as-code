@@ -33,6 +33,12 @@
       dest: ~/.Xresources
       state: link
 
+  - name: Create link for Xinitrc configuration
+    file:
+      src: ~/.dots/gui-config/x11/xinitrc
+      dest: ~/.xinitrc
+      state: link
+
   - name: Create link for user-dirs configuration
     file:
       src: ~/.dots/gui-config/x11/user-dirs.dirs
