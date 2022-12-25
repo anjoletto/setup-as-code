@@ -7,6 +7,7 @@
     packages = with pkgs; [
       # system
       xorg.xhost
+      feh
       # utils
       wget
       playerctl
