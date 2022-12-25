@@ -15,6 +15,8 @@
       magic-wormhole
       ansible
       gotop
+      starship
+      nushell
       # programming
       gitAndTools.gh
       silver-searcher
