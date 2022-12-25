@@ -3,8 +3,13 @@
   # -------------------------------------------------------------------------- #
   # docker
   # -------------------------------------------------------------------------- #
-  virtualisation.docker.enable = true;
-  users.extraGroups.docker.members = [ "user" ];
+  #virtualisation.docker.enable = true;
+  #users.extraGroups.docker.members = [ "user" ];
+  virtualisation.podman = {
+    enable = true;
+    dockerCompat = true;
+    defaultNetwork.dnsname.enable = true;
+  };
   # -------------------------------------------------------------------------- #
 
   # -------------------------------------------------------------------------- #
