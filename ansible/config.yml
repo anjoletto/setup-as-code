@@ -55,6 +55,6 @@
       src: '~/.dots/gui-config/{{ item  }}'
       dest: '~/.config/{{ item }}'
       state: link
-      loop:
-        - alacritty.yml
-        - qutebrowser
+    loop:
+      - alacritty.yml
+      - qutebrowser
