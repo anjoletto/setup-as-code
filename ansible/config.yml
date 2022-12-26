@@ -43,6 +43,7 @@
       - nvim
       - tmux.conf
       - bat
+      - starship.toml
 
   - name: Clone GUI repo
     git:
@@ -55,5 +56,5 @@
       dest: '~/.config/{{ item }}'
       state: link
       loop:
-        - ala 
+        - alacritty.yml
         - qutebrowser
