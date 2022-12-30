@@ -45,6 +45,11 @@
       - bat
       - starship.toml
 
+  - name: Clone pure (zsh) repo
+    git:
+      repo: https://github.com/sindresorhus/pure.git
+      dest: ~/.dots/tui-config/pure
+
   - name: Clone GUI repo
     git:
       repo: git@github.com:anjoletto/gui-config.git
