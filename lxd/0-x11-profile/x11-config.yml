@@ -1,6 +1,6 @@
 config:
   environment.DISPLAY: :0
-  environment.PULSE_SERVER: unix:/home/user/.pulse-native
+  environment.PULSE_SERVER: unix:/.pulse-native
   limits.cpu: "6"
   limits.memory: 30GB
   user.user-data: |
