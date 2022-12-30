@@ -15,7 +15,10 @@
     #displayManager = { defaultSession = "none+i3"; };
     displayManager.startx.enable = true;
 
-    windowManager.i3.enable = true;
+    windowManager = {
+      i3.enable = true;
+      qtile.enable = true;
+    };
 
     layout = "us";
     xkbVariant = "altgr-intl";
