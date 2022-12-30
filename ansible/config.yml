@@ -48,7 +48,7 @@
   - name: Clone pure (zsh) repo
     git:
       repo: https://github.com/sindresorhus/pure.git
-      dest: ~/.dots/tui-config/zsh/pure
+      dest: ~/.config/pure
 
   - name: Clone GUI repo
     git:
