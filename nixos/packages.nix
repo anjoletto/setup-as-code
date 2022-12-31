@@ -4,7 +4,6 @@
     acpi
     usbutils
     haskellPackages.iwlib
-    tree
     psutils
     lm_sensors
     p7zip
