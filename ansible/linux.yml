@@ -25,7 +25,7 @@
 
   - name: Clone qtile repo
     git:
-      repo: https://github.com/anjoletto/i3wm-config.git
+      repo: https://github.com/anjoletto/qtile.git
       dest: ~/.dots/qtile/
     tags:
       - qtile
