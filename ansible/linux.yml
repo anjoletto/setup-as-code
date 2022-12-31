@@ -14,9 +14,12 @@
 
   - name: Create link for i3 configuration
     file:
-      src: ~/.dots/i3wm-config
-      dest: ~/.config/i3
+      src: ~/.dots/i3wm-config/{{ item }}
+      dest: ~/.config/{{ item }}
       state: link
+    loop:
+      - i3
+      - polybar
     tags:
       - i3
 
