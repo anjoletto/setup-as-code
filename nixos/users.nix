@@ -14,6 +14,7 @@
       magic-wormhole
       ansible
       gotop
+      zoxide
       nushell
       # programming
       gitAndTools.gh
