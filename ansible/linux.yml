@@ -14,8 +14,8 @@
 
   - name: Create link for i3 configuration
     file:
-      src: ~/.dots/i3wm-config/{{ item }}
-      dest: ~/.config/{{ item }}
+      src: '~/.dots/i3wm-config/{{ item }}'
+      dest: '~/.config/{{ item }}'
       state: link
     loop:
       - i3
@@ -32,8 +32,8 @@
 
   - name: Create link for qtile configuration
     file:
-      src: ~/.dots/qtile
-      dest: ~/.config/qtile
+      src: '~/.dots/qtile'
+      dest: '~/.config/qtile'
       state: link
     tags:
       - qtile
