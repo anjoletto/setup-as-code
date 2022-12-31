@@ -28,6 +28,11 @@
       path: ~/.config
       state: directory
 
+  - name: Create GTK folder
+    file:
+      path: ~/.config/gtk
+      state: directory
+
   - name: Clone pure (zsh) repo
     git:
       repo: https://github.com/sindresorhus/pure.git
