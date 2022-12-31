@@ -32,8 +32,8 @@
 
   - name: Create link for qtile configuration
     file:
-      src: ~/.dots/qtile/
-      dest: ~/.config/qtile/
+      src: ~/.dots/qtile
+      dest: ~/.config/qtile
       state: link
     tags:
       - qtile
