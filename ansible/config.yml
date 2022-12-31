@@ -67,7 +67,7 @@
 
   - name: Create links for GTK configurations
     file:
-      src: '~/.dots/gui-config/gtk'
+      src: '~/.dots/dotfiles//gtk'
       dest: '~/.config/{{ item }}'
       state: link
     loop:
@@ -77,18 +77,18 @@
 
   - name: Create link for Xresources configuration
     file:
-      src: ~/.dots/gui-config/x11/xresources
+      src: ~/.dots/dotfiles/x11/xresources
       dest: ~/.Xresources
       state: link
 
   - name: Create link for Xinitrc configuration
     file:
-      src: ~/.dots/gui-config/x11/xinitrc
+      src: ~/.dots/dotfiles/x11/xinitrc
       dest: ~/.xinitrc
       state: link
 
   - name: Create link for user-dirs configuration
     file:
-      src: ~/.dots/gui-config/x11/user-dirs.dirs
+      src: ~/.dots/dotfiles/x11/user-dirs.dirs
       dest: ~/.config/user-dirs.dirs
       state: link
