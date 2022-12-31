@@ -28,42 +28,63 @@
       path: ~/.config
       state: directory
 
-  - name: Clone TUI repo
+  - name: Clone pure (zsh) repo
     git:
-      repo: https://github.com/anjoletto/tui-config.git
-      dest: ~/.dots/tui-config
+      repo: https://github.com/sindresorhus/pure.git
+      dest: ~/.config/pure
+
+  - name: Clone dotfiles repo
+    git:
+      repo: https://github.com/anjoletto/dotfiles.git
+      dest: ~/.dots/dotfiles
 
   - name: Create link for ZSH configuration
     file:
-      src: ~/.dots/tui-config/zsh/zshenv
+      src: ~/.dots/dotfiles/zsh/zshenv
       dest: ~/.zshenv
       state: link
 
   - name: Create links for configurations
     file:
-      src: '~/.dots/tui-config/{{ item  }}'
+      src: '~/.dots/dotfiles/{{ item  }}'
       dest: '~/.config/{{ item }}'
       state: link
     loop:
       - nvim
       - tmux.conf
       - bat
+      - sxhkd
+      - polybar
+      - dunst
+      - rofi
+      - autorandr
+      - alacritty.yml
+      - qutebrowser
 
-  - name: Clone pure (zsh) repo
-    git:
-      repo: https://github.com/sindresorhus/pure.git
-      dest: ~/.config/pure
-
-  - name: Clone GUI repo
-    git:
-      repo: https://github.com/anjoletto/gui-config.git
-      dest: ~/.dots/gui-config
-
-  - name: Create link for GUI configuration
+  - name: Create links for GTK configurations
     file:
-      src: '~/.dots/gui-config/{{ item  }}'
+      src: '~/.dots/gui-config/gtk'
       dest: '~/.config/{{ item }}'
       state: link
     loop:
-      - alacritty.yml
-      - qutebrowser
+      - gtk-2.0
+      - gtk-3.0
+      - gtk-4.0
+
+  - name: Create link for Xresources configuration
+    file:
+      src: ~/.dots/gui-config/x11/xresources
+      dest: ~/.Xresources
+      state: link
+
+  - name: Create link for Xinitrc configuration
+    file:
+      src: ~/.dots/gui-config/x11/xinitrc
+      dest: ~/.xinitrc
+      state: link
+
+  - name: Create link for user-dirs configuration
+    file:
+      src: ~/.dots/gui-config/x11/user-dirs.dirs
+      dest: ~/.config/user-dirs.dirs
+      state: link
