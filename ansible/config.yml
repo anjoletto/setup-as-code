@@ -54,7 +54,6 @@
       - tmux.conf
       - bat
       - sxhkd
-      - polybar
       - dunst
       - rofi
       - autorandr
