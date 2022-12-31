@@ -23,9 +23,14 @@
       scope: global
       value: nvim
 
+  - name: Create config folder
+    file:
+      path: ~/.config
+      state: directory
+
   - name: Clone TUI repo
     git:
-      repo: git@github.com:anjoletto/tui-config.git
+      repo: https://github.com/anjoletto/tui-config.git
       dest: ~/.dots/tui-config
 
   - name: Create link for ZSH configuration
@@ -51,7 +56,7 @@
 
   - name: Clone GUI repo
     git:
-      repo: git@github.com:anjoletto/gui-config.git
+      repo: https://github.com/anjoletto/gui-config.git
       dest: ~/.dots/gui-config
 
   - name: Create link for GUI configuration
