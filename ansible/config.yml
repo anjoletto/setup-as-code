@@ -67,7 +67,7 @@
 
   - name: Create links for GTK configurations
     file:
-      src: '~/.dots/dotfiles//gtk'
+      src: '~/.dots/dotfiles/gtk'
       dest: '~/.config/{{ item }}'
       state: link
     loop:
