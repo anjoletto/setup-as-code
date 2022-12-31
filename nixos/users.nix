@@ -7,7 +7,6 @@
     packages = with pkgs; [
       # system
       xorg.xhost
-      feh
       # utils
       wget
       playerctl
@@ -15,7 +14,6 @@
       magic-wormhole
       ansible
       gotop
-      starship
       nushell
       # programming
       gitAndTools.gh
